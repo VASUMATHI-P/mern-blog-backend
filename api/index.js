@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import userRoute from './routes/user.routes.js'
 import authRoute from './routes/auth.route.js'
+import cookieParser from 'cookie-parser';
 const app = express();
 import dotenv from 'dotenv';
 dotenv.config();
@@ -16,6 +17,7 @@ mongoose.connect(process.env.MONGODB_CONNECT_URL)
         });
 
 
+app.use(cookieParser());
 app.get('/', () => {
   console.log('Hello World!');
 })
