@@ -14,5 +14,6 @@ export const verifyUser = (req, res, next) => {
       req.user = user;
     }
   )
+  console.log(req.user);
   next();
 }
